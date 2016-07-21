@@ -4,8 +4,16 @@
         "source": "E:\\AndroidStudioProjects\\linle\\MaterialRefresh_library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
     },
     {
+        "merged": "E:\\Library\\Case\\HomePageA\\MaterialRefresh_library\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "E:\\Library\\Case\\HomePageA\\MaterialRefresh_library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
         "merged": "E:\\AndroidStudioProjects\\linle\\MaterialRefresh_library\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
         "source": "E:\\AndroidStudioProjects\\linle\\MaterialRefresh_library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "E:\\Library\\Case\\HomePageA\\MaterialRefresh_library\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "E:\\Library\\Case\\HomePageA\\MaterialRefresh_library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
     },
     {
         "merged": "E:\\AndroidStudioProjects\\HomePageA\\MaterialRefresh_library\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",

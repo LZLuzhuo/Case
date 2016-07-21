@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package me.luzhuo.homepagea;
+package me.luzhuo.homepagea.ui.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -26,6 +26,7 @@ import com.cjj.MaterialRefreshLayout;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 
+import me.luzhuo.homepagea.R;
 import me.luzhuo.homepagea.presenter.HomePresenter;
 import me.luzhuo.homepagea.ui.view.IHomeView;
 import me.luzhuo.homepagea.widget.banner.LZConvenientBanner;

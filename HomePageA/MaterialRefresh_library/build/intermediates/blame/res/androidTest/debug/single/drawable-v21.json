@@ -8,11 +8,19 @@
         "source": "E:\\AndroidStudioProjects\\linle\\MaterialRefresh_library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
     },
     {
+        "merged": "E:\\Library\\Case\\HomePageA\\MaterialRefresh_library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "E:\\Library\\Case\\HomePageA\\MaterialRefresh_library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+    },
+    {
         "merged": "E:\\AndroidStudioProjects\\linle\\MaterialRefresh_library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v21\\abc_btn_colored_material.xml",
         "source": "E:\\AndroidStudioProjects\\linle\\MaterialRefresh_library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-v21\\abc_btn_colored_material.xml"
     },
     {
         "merged": "E:\\AndroidStudioProjects\\HomePageA\\MaterialRefresh_library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
         "source": "E:\\AndroidStudioProjects\\HomePageA\\MaterialRefresh_library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "E:\\Library\\Case\\HomePageA\\MaterialRefresh_library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "E:\\Library\\Case\\HomePageA\\MaterialRefresh_library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-v21\\abc_btn_colored_material.xml"
     }
 ]
