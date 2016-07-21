@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:background="#ffffff" >
+
+    <!-- 广告轮播图 -->
+    <me.luzhuo.homepagea.widget.banner.LZConvenientBanner
+        android:layout_alignParentTop="true"
+        android:id="@+id/home_banner"
+        android:layout_width="match_parent"
+        android:layout_height="155dp" />
+
+    <RelativeLayout
+        android:id="@+id/home_rl_item0"
+        android:layout_below="@id/home_banner"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" >
+
+        <!-- 动态加载的入口 -->
+        <me.luzhuo.homepagea.widget.banner.LZConvenientBanner
+            android:id="@+id/home_entrance"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <!-- 圆点指示(自定义) -->
+        <LinearLayout
+            android:layout_marginBottom="7.5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/home_dots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/home_v_item1"
+        style="@style/GlobalSeparationLine"
+        android:layout_below="@id/home_rl_item0"/>
+
+    <TextView
+        android:layout_below="@id/home_v_item1"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="以下是listview内容"
+        android:layout_marginLeft="3dp"
+        android:gravity="bottom"/>
+
+</RelativeLayout>
