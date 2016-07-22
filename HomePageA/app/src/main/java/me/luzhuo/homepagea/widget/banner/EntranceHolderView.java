@@ -15,7 +15,6 @@
 package me.luzhuo.homepagea.widget.banner;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -23,13 +22,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bigkoo.convenientbanner.holder.Holder;
-import com.lidroid.xutils.BitmapUtils;
 
 import java.util.ArrayList;
 
 import me.luzhuo.homepagea.R;
 import me.luzhuo.homepagea.bean.Entrance;
 import me.luzhuo.homepagea.callback.OnEntranceClickListener;
+import me.luzhuo.homepagea.utils.AndroidUniversalImageLoaderImpl;
 
 /**
  * =================================================
@@ -114,7 +113,7 @@ public class EntranceHolderView implements Holder<ArrayList<Entrance.Data>>, Vie
 
         for(int x = 0; x < data.size(); x++){
             Entrance.Data Entrance = data.get(x);
-            new BitmapUtils(context).display(images[x], Entrance.imageurl);
+            new AndroidUniversalImageLoaderImpl().displayNet(images[x], Entrance.imageurl, R.mipmap.touming);
             texts[x].setText(Entrance.title == null ? "" : Entrance.title);
             rels[x].setVisibility(View.VISIBLE);
         }

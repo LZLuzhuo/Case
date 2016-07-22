@@ -19,13 +19,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import me.luzhuo.homepagea.R;
-import me.luzhuo.homepagea.bean.ListviewData;
 
 /**
  * =================================================
@@ -45,13 +45,11 @@ import me.luzhuo.homepagea.bean.ListviewData;
  * =================================================
  **/
 public class HomeAdapter extends BaseAdapter{
-    private Context context;
     private ArrayList<String> listviewdatas;
     private LayoutInflater inflater;
 
     public HomeAdapter(Context context, ArrayList<String> listviewdatas) {
         this.listviewdatas = listviewdatas;
-        this.context = context;
         inflater = LayoutInflater.from(context);
     }
 
@@ -74,10 +72,8 @@ public class HomeAdapter extends BaseAdapter{
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         if(convertView == null){
-            convertView = inflater.inflate(R.layout.item_home_text,null);
-            viewHolder = new ViewHolder();
-
-            viewHolder.tv_home_text = (TextView)convertView.findViewById(R.id.tv_home_text);
+            convertView = inflater.inflate(R.layout.item_home_text, parent, false);
+            viewHolder = new ViewHolder(convertView);
 
             convertView.setTag(viewHolder);
         }else{
@@ -92,7 +88,12 @@ public class HomeAdapter extends BaseAdapter{
     }
 
     class ViewHolder{
+        @BindView(R.id.tv_home_text)
         TextView tv_home_text;
+
+        public ViewHolder(View convertView) {
+            ButterKnife.bind(this, convertView);
+        }
     }
 
 }

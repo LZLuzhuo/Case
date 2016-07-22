@@ -15,7 +15,6 @@
 package me.luzhuo.homepagea.widget.banner;
 
 import android.content.Context;
-import android.graphics.PointF;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 

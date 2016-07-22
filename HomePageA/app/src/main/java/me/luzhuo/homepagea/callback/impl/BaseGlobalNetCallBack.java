@@ -16,9 +16,7 @@ package me.luzhuo.homepagea.callback.impl;
 
 import java.util.ArrayList;
 
-import me.luzhuo.homepagea.bean.Banner;
 import me.luzhuo.homepagea.bean.Entrance;
-import me.luzhuo.homepagea.bean.ListviewData;
 import me.luzhuo.homepagea.callback.GlobalNetCallBack;
 
 /**

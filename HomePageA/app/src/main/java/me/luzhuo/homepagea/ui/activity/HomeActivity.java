@@ -23,9 +23,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.cjj.MaterialRefreshLayout;
-import com.lidroid.xutils.ViewUtils;
-import com.lidroid.xutils.view.annotation.ViewInject;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import me.luzhuo.homepagea.R;
 import me.luzhuo.homepagea.presenter.HomePresenter;
 import me.luzhuo.homepagea.ui.view.IHomeView;
@@ -49,15 +49,15 @@ import me.luzhuo.homepagea.widget.banner.LZConvenientBanner;
  * =================================================
  **/
 public class HomeActivity extends Activity implements IHomeView{
-    @ViewInject(R.id.home_refresh)
+    @BindView(R.id.home_refresh)
     MaterialRefreshLayout home_refresh;
-    @ViewInject(R.id.home_list)
+    @BindView(R.id.home_list)
     ListView home_list;
-    @ViewInject(R.id.home_toolbar)
+    @BindView(R.id.home_toolbar)
     RelativeLayout home_toolbar;
-    @ViewInject(R.id.home_title_back)
+    @BindView(R.id.home_title_back)
     TextView home_title_back;
-    @ViewInject(R.id.home_title_white)
+    @BindView(R.id.home_title_white)
     TextView home_title_white;
 
     private LZConvenientBanner home_banner, home_entrance;
@@ -70,7 +70,7 @@ public class HomeActivity extends Activity implements IHomeView{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        ViewUtils.inject(this); //注入view和事件
+        ButterKnife.bind(this); //注入view和事件
         viewHeader = View.inflate(this, R.layout.activity_header, null);
         homePresenter = new HomePresenter(this);
         initData();

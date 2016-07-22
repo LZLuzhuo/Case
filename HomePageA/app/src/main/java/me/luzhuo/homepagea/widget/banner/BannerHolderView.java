@@ -19,9 +19,9 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.bigkoo.convenientbanner.holder.Holder;
-import com.lidroid.xutils.BitmapUtils;
 
 import me.luzhuo.homepagea.R;
+import me.luzhuo.homepagea.utils.AndroidUniversalImageLoaderImpl;
 
 /**
  * =================================================
@@ -51,7 +51,6 @@ public class BannerHolderView implements Holder<String> {
 
     @Override
     public void UpdateUI(Context context,int position, String data) {
-        // 案例代码,为了简洁
-        new BitmapUtils(context).display(imageView, data);
+        new AndroidUniversalImageLoaderImpl().displayNet(imageView, data, R.mipmap.touming);
     }
 }

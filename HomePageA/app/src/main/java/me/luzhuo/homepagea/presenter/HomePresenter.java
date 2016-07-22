@@ -16,7 +16,6 @@ package me.luzhuo.homepagea.presenter;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
@@ -44,9 +43,9 @@ import me.luzhuo.homepagea.model.impl.IHomeImpl;
 import me.luzhuo.homepagea.ui.adapter.HomeAdapter;
 import me.luzhuo.homepagea.ui.view.IHomeView;
 import me.luzhuo.homepagea.utils.DisplayUtil;
+import me.luzhuo.homepagea.widget.banner.BannerHolderView;
 import me.luzhuo.homepagea.widget.banner.EntranceHolderView;
 import me.luzhuo.homepagea.widget.banner.LZConvenientBanner;
-import me.luzhuo.homepagea.widget.banner.BannerHolderView;
 
 /**
  * =================================================
@@ -209,7 +208,7 @@ public class HomePresenter implements AdapterView.OnItemClickListener {
     OnEntranceClickListener onEntranceClickListener = new OnEntranceClickListener() {
         @Override
         public void onEntranceClick(String title) {
-            Log.e("home", "onEntranceClick:" + title);
+            Toast.makeText((Context) iHomeView, "Entrance:onEntranceClick:".concat(title), Toast.LENGTH_SHORT).show();
         }
     };
 
@@ -232,6 +231,10 @@ public class HomePresenter implements AdapterView.OnItemClickListener {
             dots.add(m);
             home_dots.addView(m);
         }
+
+        // 只有一页的时候把点隐藏
+        if(entranceslist.size() == 1) home_dots.setVisibility(View.GONE);
+        else home_dots.setVisibility(View.VISIBLE);
     }
     // ------------------------------------------------------------ Entrance ----------
 

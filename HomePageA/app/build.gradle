@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
 
 android {
     compileSdkVersion 23
@@ -23,8 +24,11 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.bigkoo:convenientbanner:2.0.5' // https://github.com/saiwu-bigkoo/Android-ConvenientBanner
+    compile 'com.bigkoo:convenientbanner:2.0.5'
+    // https://github.com/saiwu-bigkoo/Android-ConvenientBanner
     compile project(':MaterialRefresh_library')
-
-    compile 'com.jiechic.library:xUtils:2.6.14'
+    compile files('libs/universal-image-loader-1.9.5.jar')
+    // https://github.com/JakeWharton/butterknife
+    compile 'com.jakewharton:butterknife:8.2.1'
+    apt 'com.jakewharton:butterknife-compiler:8.2.1'
 }
