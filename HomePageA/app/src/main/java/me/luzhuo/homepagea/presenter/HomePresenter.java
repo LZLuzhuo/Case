@@ -219,8 +219,8 @@ public class HomePresenter implements AdapterView.OnItemClickListener {
         // 添加圆点
         dots = new ArrayList<View>();
         for (int i = 0; i < entranceslist.size(); i++) {
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(9, 9);  //点View的大小
-            params.setMargins(5, 0, 5, 0); // 左右各5点
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(DisplayUtil.dipTopx((Context)iHomeView, 5), DisplayUtil.dipTopx((Context)iHomeView, 5));  //点View的大小
+            params.setMargins(DisplayUtil.dipTopx((Context)iHomeView, 2), 0, DisplayUtil.dipTopx((Context)iHomeView, 2), 0); // 点View的间距
             View m = new View((Context)iHomeView);
             if (i == 0){
                 m.setBackgroundResource(R.mipmap.ic_page_indicator_focused_blue);
