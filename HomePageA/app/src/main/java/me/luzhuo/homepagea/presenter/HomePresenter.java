@@ -50,7 +50,7 @@ import me.luzhuo.homepagea.widget.banner.LZConvenientBanner;
 /**
  * =================================================
  * <p>
- * Author: 卢卓
+ * Author: Luzhuo
  * <p>
  * Version: 1.0
  * <p>

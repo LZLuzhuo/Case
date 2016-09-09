@@ -17,9 +17,8 @@ package me.luzhuo.homepagea.widget.banner;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.widget.AdapterView;
+import android.widget.GridView;
 
 import com.bigkoo.convenientbanner.holder.Holder;
 
@@ -28,12 +27,12 @@ import java.util.ArrayList;
 import me.luzhuo.homepagea.R;
 import me.luzhuo.homepagea.bean.Entrance;
 import me.luzhuo.homepagea.callback.OnEntranceClickListener;
-import me.luzhuo.homepagea.utils.AndroidUniversalImageLoaderImpl;
+import me.luzhuo.homepagea.ui.adapter.EntranceAdapter;
 
 /**
  * =================================================
  * <p>
- * Author: 卢卓
+ * Author: Luzhuo
  * <p>
  * Version: 1.0
  * <p>
@@ -43,17 +42,17 @@ import me.luzhuo.homepagea.utils.AndroidUniversalImageLoaderImpl;
  * <p>
  * Revision History:
  * <p>
- * Copyright:
+ * Copyright: Copyright 2016 Luzhuo. All rights reserved.
  * <p>
  * =================================================
  **/
-public class EntranceHolderView implements Holder<ArrayList<Entrance.Data>>, View.OnClickListener {
+public class EntranceHolderView implements Holder<ArrayList<Entrance.Data>> {
     private View view;
     private OnEntranceClickListener onEntranceClickListener;
 
-    private ImageView[] images = new ImageView[8];
-    private TextView[] texts = new TextView[8];
-    private RelativeLayout[] rels = new RelativeLayout[8];
+    private GridView gridview;
+    private EntranceAdapter entranceAdapter;
+    private ArrayList<Entrance.Data> datas = new ArrayList<>();
 
     public EntranceHolderView(OnEntranceClickListener onEntranceClickListener){
         this.onEntranceClickListener = onEntranceClickListener;
@@ -62,72 +61,31 @@ public class EntranceHolderView implements Holder<ArrayList<Entrance.Data>>, Vie
     @Override
     public View createView(Context context) {
         view = LayoutInflater.from(context).inflate(R.layout.fragment_entrance, null, false);
-        find(view);
-        click();
+        gridview = (GridView) view.findViewById(R.id.gridview);
+
+        initGridView(context);
         return view;
     }
 
-    private void click() {
-        rels[0].setOnClickListener(this);
-        rels[1].setOnClickListener(this);
-        rels[2].setOnClickListener(this);
-        rels[3].setOnClickListener(this);
-        rels[4].setOnClickListener(this);
-        rels[5].setOnClickListener(this);
-        rels[6].setOnClickListener(this);
-        rels[7].setOnClickListener(this);
+    private void initGridView(Context context) {
+        entranceAdapter = new EntranceAdapter(context, datas);
+        gridview.setAdapter(entranceAdapter);
+        gridview.setOnItemClickListener(listener);
     }
 
-    private void find(View view) {
-        images[0] = (ImageView) view.findViewById(R.id.iv_entrance_item01);
-        images[1] = (ImageView) view.findViewById(R.id.iv_entrance_item02);
-        images[2] = (ImageView) view.findViewById(R.id.iv_entrance_item03);
-        images[3] = (ImageView) view.findViewById(R.id.iv_entrance_item04);
-        images[4] = (ImageView) view.findViewById(R.id.iv_entrance_item05);
-        images[5] = (ImageView) view.findViewById(R.id.iv_entrance_item06);
-        images[6] = (ImageView) view.findViewById(R.id.iv_entrance_item07);
-        images[7] = (ImageView) view.findViewById(R.id.iv_entrance_item08);
-
-        texts[0] = (TextView) view.findViewById(R.id.tv_entrance_item1);
-        texts[1] = (TextView) view.findViewById(R.id.tv_entrance_item2);
-        texts[2] = (TextView) view.findViewById(R.id.tv_entrance_item3);
-        texts[3] = (TextView) view.findViewById(R.id.tv_entrance_item4);
-        texts[4] = (TextView) view.findViewById(R.id.tv_entrance_item5);
-        texts[5] = (TextView) view.findViewById(R.id.tv_entrance_item6);
-        texts[6] = (TextView) view.findViewById(R.id.tv_entrance_item7);
-        texts[7] = (TextView) view.findViewById(R.id.tv_entrance_item8);
-
-        rels[0] = (RelativeLayout) view.findViewById(R.id.rl_entrance_click1);
-        rels[1] = (RelativeLayout) view.findViewById(R.id.rl_entrance_click2);
-        rels[2] = (RelativeLayout) view.findViewById(R.id.rl_entrance_click3);
-        rels[3] = (RelativeLayout) view.findViewById(R.id.rl_entrance_click4);
-        rels[4] = (RelativeLayout) view.findViewById(R.id.rl_entrance_click5);
-        rels[5] = (RelativeLayout) view.findViewById(R.id.rl_entrance_click6);
-        rels[6] = (RelativeLayout) view.findViewById(R.id.rl_entrance_click7);
-        rels[7] = (RelativeLayout) view.findViewById(R.id.rl_entrance_click8);
-    }
+    AdapterView.OnItemClickListener listener = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            if(onEntranceClickListener != null) onEntranceClickListener.onEntranceClick(datas.get(position).title.trim());
+        }
+    };
 
     @Override
     public void UpdateUI(Context context, int position, ArrayList<Entrance.Data> data) {
         if(data == null) return;
 
-        for(int x = 0; x < data.size(); x++){
-            Entrance.Data Entrance = data.get(x);
-            new AndroidUniversalImageLoaderImpl().displayNet(images[x], Entrance.imageurl, R.mipmap.touming);
-            texts[x].setText(Entrance.title == null ? "" : Entrance.title);
-            rels[x].setVisibility(View.VISIBLE);
-        }
-    }
-
-    @Override
-    public void onClick(View v) {
-        if(onEntranceClickListener != null) if(rels[0] == v) onEntranceClickListener.onEntranceClick(texts[0].getText().toString().trim());
-        if(onEntranceClickListener != null) if(rels[1] == v) onEntranceClickListener.onEntranceClick(texts[1].getText().toString().trim());
-        if(onEntranceClickListener != null) if(rels[2] == v) onEntranceClickListener.onEntranceClick(texts[2].getText().toString().trim());
-        if(onEntranceClickListener != null) if(rels[3] == v) onEntranceClickListener.onEntranceClick(texts[3].getText().toString().trim());
-        if(onEntranceClickListener != null) if(rels[4] == v) onEntranceClickListener.onEntranceClick(texts[4].getText().toString().trim());
-        if(onEntranceClickListener != null) if(rels[5] == v) onEntranceClickListener.onEntranceClick(texts[5].getText().toString().trim());
-        if(onEntranceClickListener != null) if(rels[6] == v) onEntranceClickListener.onEntranceClick(texts[6].getText().toString().trim());
-        if(onEntranceClickListener != null) if(rels[7] == v) onEntranceClickListener.onEntranceClick(texts[7].getText().toString().trim());
+        datas.clear();
+        datas.addAll(data);
+        entranceAdapter.notifyDataSetChanged();
     }
 }

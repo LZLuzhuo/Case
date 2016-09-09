@@ -25,7 +25,7 @@ import me.luzhuo.homepagea.model.IHome;
 /**
  * =================================================
  * <p>
- * Author: 卢卓
+ * Author: Luzhuo
  * <p>
  * Version: 1.0
  * <p>
