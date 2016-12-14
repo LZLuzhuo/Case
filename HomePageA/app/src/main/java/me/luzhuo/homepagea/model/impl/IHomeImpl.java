@@ -56,7 +56,7 @@ public class IHomeImpl implements IHome{
     public void getBannerData(final GlobalNetCallBack callback) {
         ArrayList<String> data = new ArrayList<>();
         for (int x = 0; x < 5; x++){
-            data.add("http://oap60depu.bkt.clouddn.com/android/case/banner.png");
+            data.add("http://luzhuo.me/android/case/homepagea/banner.png");
         }
         Banner banner = new Banner();
         banner.imagurls = data;
@@ -71,7 +71,7 @@ public class IHomeImpl implements IHome{
         for (int x = 0; x < 20; x++){
             entranceData = new Entrance.Data();
             entranceData.title = "Title:".concat(String.valueOf(x));
-            entranceData.imageurl = "http://oap60depu.bkt.clouddn.com/android/case/entrance.png";
+            entranceData.imageurl = "http://luzhuo.me/android/case/homepagea/entrance.png";
             data.add(entranceData);
         }
         Entrance entrance = new Entrance();
